@@ -17,7 +17,7 @@ module.exports = {
     optimization: {
         minimize: true,
         minimizer: [
-            new CSSMinimizer(),
+            new CssMinimizer(),
             new Terser(),
         ]
     },
@@ -57,6 +57,18 @@ module.exports = {
             test: /\.(png|jpe?g|gif)$/,
             loader: 'file-loader'
         },
+        {
+            // *Esta regla es para que babel pueda 'traducir' a estandares viejos el js. Esto es para 
+            // *aumentar la retrocompatibilidad del codigo con navegadores viejos 
+            test: /\.m?js$/,
+            exclude: /node_modules/,
+            use: {
+              loader: "babel-loader",
+              options: {
+                presets: ['@babel/preset-env']
+              }
+            }
+        }
         ]
     },
     plugins: [
