@@ -1,3 +1,15 @@
-# webpack-inicial
+# webpack-starter
 
-En mi 'OneNote for Windows 10' tengo todos los pasos de como crear el Webpack
+Este es el proyecto inicial para crear aplicaciones utilizando webpack
+
+### Notas:
+
+Recordar reconstruir los modulos de Node
+``` 
+npm install
+```
+
+Y para construir el build
+```
+nom run build 
+```
